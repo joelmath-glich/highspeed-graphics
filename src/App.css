@@ -1,38 +1,152 @@
-.App {
-  text-align: center;
+.section-title {
+  font-size: clamp(1.3rem, 1.5vw + 0.5rem, 1.8rem);
+  border-left: 5px solid #d90429;
+  padding-left: 18px;
+  font-weight: bold;
+  margin-top: 40px;
+  margin-bottom: 28px;
+  background: linear-gradient(90deg, #ffe4e1 80%, #fff 100%);
+  color: #d90429;
+  font-size: 1.5rem;
+  border-radius: 0 12px 12px 0;
+  box-shadow: 0 2px 8px rgba(217,4,41,0.07);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.list-group-item {
+  border: none;
+  padding-left: 30px;
+  font-size: 1.08rem;
+  background: #f8f9fa;
+  color: #333;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  transition: background 0.2s, color 0.2s;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.card {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px 0 rgba(217,4,41,0.08);
+  border: 1px solid #f3f3f3;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  border: none;
+  background: #f6f6f6;
+}
+
+.card-service {
+  border: 1px solid #f3f3f3;
+  border-radius: 16px;
+  padding: 22px 18px 18px 18px;
+  box-shadow: 0 2px 12px 0 rgba(217,4,41,0.07);
+  background-color: #fff;
+  transition: transform 0.2s, box-shadow 0.2s;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+}
+
+.card-service:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 24px 0 rgba(217,4,41,0.15);
+  border-color: #d90429;
+}
+
+.card-body {
+  padding: 10px 0 0 0;
+  font-size: clamp(0.95rem, 1vw + 0.2rem, 1.1rem);
+  color: #555;
+}
+
+.btn-danger, .btn-outline-danger {
+  background-color: #d90429;
+  border-color: #d90429;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-outline-danger {
+  background: #fff;
+  color: #d90429;
+}
+
+.btn-danger:hover, .btn-outline-danger:hover {
+  background: #b00322;
+  color: #fff;
+  border-color: #b00322;
+}
+
+.modal-backdrop-custom {
+  position: fixed;
+  overflow-y: auto;
+  backdrop-filter: blur(3px);
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 1050;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  animation: fadeInBackdrop 0.2s;
 }
 
-.App-link {
-  color: #61dafb;
+@keyframes slideFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-@keyframes App-logo-spin {
+.hero-animated {
+  animation: slideFadeIn 1s ease-out;
+}
+
+@keyframes slideFadeIn {
   from {
-    transform: rotate(0deg);
+    transform: translateY(-30px);
+    opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+    transform: translateY(0);
+    opacity: 1;
   }
+}
+
+
+
+.modal-content-custom {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 rgba(217,4,41,0.18);
+  padding: 2.5rem 2rem 2rem 2rem;
+  min-width: 320px;
+  max-width: 95vw;
+  max-height: 90vh;
+  position: relative;
+  text-align: center;
+  border: 2px solid #d90429;
+}
+
+.btn-close-custom {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #d90429;
+  cursor: pointer;
+  z-index: 2;
+  transition: color 0.2s;
+}
+
+.btn-close-custom:hover {
+  color: #b00322;
 }
